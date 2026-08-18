@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotorMile - Vehicle Service Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">MotorMile</div>
+
+        <div class="nav-links">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#vehicle">My Vehicle</a>
+            <a href="#service">Book Service</a>
+            <a href="#history">Service History</a>
+        </div>
+    </div>
+
+
+    <!-- Dashboard -->
+    <div class="container" id="dashboard">
+
+        <div class="welcome">
+            <h1>Welcome to MotorMile</h1>
+            <p>Manage your vehicle service and maintenance easily.</p>
+        </div>
+
+        <!-- Cards -->
+        <div class="cards">
+
+            <div class="card">
+                <h3>My Vehicle</h3>
+                <p>Honda City</p>
+                <span>2022 Model</span>
+            </div>
+
+            <div class="card">
+                <h3>Next Service</h3>
+                <p>15 September 2026</p>
+                <span>In 28 days</span>
+            </div>
+
+            <div class="card">
+                <h3>Total Services</h3>
+                <p>8</p>
+                <span>Completed services</span>
+            </div>
+
+            <div class="card">
+                <h3>Last Service</h3>
+                <p>10 June 2026</p>
+                <span>Oil Change</span>
+            </div>
+
+        </div>
+
+
+        <!-- Vehicle Details -->
+        <div class="box" id="vehicle">
+
+            <h2>Vehicle Details</h2>
+
+            <div class="vehicle-details">
+                <p><b>Vehicle:</b> Honda City</p>
+                <p><b>Registration No:</b> MH 01 AB 1234</p>
+                <p><b>Fuel Type:</b> Petrol</p>
+                <p><b>Year:</b> 2022</p>
+                <p><b>Current KM:</b> 24,500 km</p>
+            </div>
+
+        </div>
+
+
+        <!-- Book Service -->
+        <div class="box" id="service">
+
+            <h2>Book a Service</h2>
+
+            <form>
+
+                <label>Select Service</label>
+                <select>
+                    <option>General Service</option>
+                    <option>Oil Change</option>
+                    <option>Brake Inspection</option>
+                    <option>Engine Check</option>
+                    <option>Tyre Replacement</option>
+                </select>
+
+                <label>Preferred Date</label>
+                <input type="date">
+
+                <label>Preferred Time</label>
+                <input type="time">
+
+                <label>Additional Notes</label>
+                <textarea placeholder="Describe any issue with your vehicle"></textarea>
+
+                <button type="submit">Book Service</button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Service History -->
+        <div class="box" id="history">
+
+            <h2>Service History</h2>
+
+            <table>
+
+                <tr>
+                    <th>Date</th>
+                    <th>Service</th>
+                    <th>Cost</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>10 June 2026</td>
+                    <td>Oil Change</td>
+                    <td>₹2,500</td>
+                    <td class="completed">Completed</td>
+                </tr>
+
+                <tr>
+                    <td>12 March 2026</td>
+                    <td>General Service</td>
+                    <td>₹4,200</td>
+                    <td class="completed">Completed</td>
+                </tr>
+
+                <tr>
+                    <td>20 December 2025</td>
+                    <td>Brake Inspection</td>
+                    <td>₹1,500</td>
+                    <td class="completed">Completed</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- Maintenance Reminder -->
+        <div class="box">
+
+            <h2>Maintenance Reminders</h2>
+
+            <div class="reminder">
+                <p><b>Engine Oil</b></p>
+                <span>Due in 500 km</span>
+            </div>
+
+            <div class="reminder">
+                <p><b>Tyre Check</b></p>
+                <span>Due in 1,000 km</span>
+            </div>
+
+            <div class="reminder">
+                <p><b>Brake Inspection</b></p>
+                <span>Due in 2,000 km</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2026 MotorMile | Vehicle Service & Maintenance Management System</p>
+    </div>
+
+</body>
+</html>
