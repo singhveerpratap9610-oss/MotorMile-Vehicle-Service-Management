@@ -10,8 +10,12 @@
 <body>
 
     <!-- Navigation Bar -->
-    <div class="navbar">
-        <div class="logo">MotorMile</div>
+    <nav class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">🚗</span>
+            <span>Motor<span class="logo-highlight">Mile</span></span>
+        </div>
 
         <div class="nav-links">
             <a href="#dashboard">Dashboard</a>
@@ -19,164 +23,382 @@
             <a href="#service">Book Service</a>
             <a href="#history">Service History</a>
         </div>
-    </div>
+
+    </nav>
 
 
-    <!-- Dashboard -->
-    <div class="container" id="dashboard">
+    <!-- Main Container -->
+    <main class="container" id="dashboard">
 
-        <div class="welcome">
-            <h1>Welcome to MotorMile</h1>
-            <p>Manage your vehicle service and maintenance easily.</p>
-        </div>
+        <!-- Welcome Section -->
+        <section class="welcome">
 
-        <!-- Cards -->
-        <div class="cards">
+            <div class="welcome-text">
+                <span class="welcome-tag">VEHICLE MANAGEMENT</span>
+
+                <h1>Welcome to <span>MotorMile</span></h1>
+
+                <p>
+                    Manage your vehicle service, maintenance and service history
+                    easily from one place.
+                </p>
+            </div>
+
+            <div class="welcome-status">
+                <div class="status-dot"></div>
+                <span>Vehicle Status: <strong>Healthy</strong></span>
+            </div>
+
+        </section>
+
+
+        <!-- Dashboard Cards -->
+        <section class="cards">
 
             <div class="card">
+
+                <div class="card-top">
+                    <div class="card-icon">🚗</div>
+                    <span class="card-label">VEHICLE</span>
+                </div>
+
                 <h3>My Vehicle</h3>
                 <p>Honda City</p>
-                <span>2022 Model</span>
+                <span class="card-info">2022 Model</span>
+
             </div>
 
+
             <div class="card">
+
+                <div class="card-top">
+                    <div class="card-icon">📅</div>
+                    <span class="card-label">UPCOMING</span>
+                </div>
+
                 <h3>Next Service</h3>
                 <p>15 September 2026</p>
-                <span>In 28 days</span>
+                <span class="card-info">In 28 days</span>
+
             </div>
 
+
             <div class="card">
+
+                <div class="card-top">
+                    <div class="card-icon">🔧</div>
+                    <span class="card-label">SERVICES</span>
+                </div>
+
                 <h3>Total Services</h3>
                 <p>8</p>
-                <span>Completed services</span>
+                <span class="card-info">Completed services</span>
+
             </div>
+
 
             <div class="card">
+
+                <div class="card-top">
+                    <div class="card-icon">✓</div>
+                    <span class="card-label">RECENT</span>
+                </div>
+
                 <h3>Last Service</h3>
                 <p>10 June 2026</p>
-                <span>Oil Change</span>
+                <span class="card-info">Oil Change</span>
+
             </div>
 
-        </div>
+        </section>
 
 
         <!-- Vehicle Details -->
-        <div class="box" id="vehicle">
+        <section class="box" id="vehicle">
 
-            <h2>Vehicle Details</h2>
+            <div class="section-heading">
+                <div>
+                    <span class="section-tag">MY VEHICLE</span>
+                    <h2>Vehicle Details</h2>
+                </div>
 
-            <div class="vehicle-details">
-                <p><b>Vehicle:</b> Honda City</p>
-                <p><b>Registration No:</b> MH 01 AB 1234</p>
-                <p><b>Fuel Type:</b> Petrol</p>
-                <p><b>Year:</b> 2022</p>
-                <p><b>Current KM:</b> 24,500 km</p>
+                <span class="vehicle-status">● Healthy</span>
             </div>
 
-        </div>
+            <div class="vehicle-details">
+
+                <div class="detail-item">
+                    <span class="detail-icon">🚘</span>
+                    <div>
+                        <small>Vehicle</small>
+                        <strong>Honda City</strong>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-icon">🔖</span>
+                    <div>
+                        <small>Registration No.</small>
+                        <strong>MH 01 AB 1234</strong>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-icon">⛽</span>
+                    <div>
+                        <small>Fuel Type</small>
+                        <strong>Petrol</strong>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-icon">📆</span>
+                    <div>
+                        <small>Year</small>
+                        <strong>2022</strong>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-icon">🛣️</span>
+                    <div>
+                        <small>Current KM</small>
+                        <strong>24,500 km</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
 
 
         <!-- Book Service -->
-        <div class="box" id="service">
+        <section class="box" id="service">
 
-            <h2>Book a Service</h2>
+            <div class="section-heading">
+                <div>
+                    <span class="section-tag">SERVICE CENTER</span>
+                    <h2>Book a Service</h2>
+                </div>
+            </div>
 
             <form>
 
-                <label>Select Service</label>
-                <select>
-                    <option>General Service</option>
-                    <option>Oil Change</option>
-                    <option>Brake Inspection</option>
-                    <option>Engine Check</option>
-                    <option>Tyre Replacement</option>
-                </select>
+                <div class="form-group">
 
-                <label>Preferred Date</label>
-                <input type="date">
+                    <label for="service-type">Select Service</label>
 
-                <label>Preferred Time</label>
-                <input type="time">
+                    <select id="service-type">
+                        <option>General Service</option>
+                        <option>Oil Change</option>
+                        <option>Brake Inspection</option>
+                        <option>Engine Check</option>
+                        <option>Tyre Replacement</option>
+                    </select>
 
-                <label>Additional Notes</label>
-                <textarea placeholder="Describe any issue with your vehicle"></textarea>
+                </div>
 
-                <button type="submit">Book Service</button>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="date">Preferred Date</label>
+
+                        <input
+                            type="date"
+                            id="date"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="time">Preferred Time</label>
+
+                        <input
+                            type="time"
+                            id="time"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="notes">Additional Notes</label>
+
+                    <textarea
+                        id="notes"
+                        placeholder="Describe any issue with your vehicle"
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit">
+                    Book Service →
+                </button>
 
             </form>
 
-        </div>
+        </section>
 
 
         <!-- Service History -->
-        <div class="box" id="history">
+        <section class="box" id="history">
 
-            <h2>Service History</h2>
+            <div class="section-heading">
 
-            <table>
+                <div>
+                    <span class="section-tag">RECORDS</span>
+                    <h2>Service History</h2>
+                </div>
 
-                <tr>
-                    <th>Date</th>
-                    <th>Service</th>
-                    <th>Cost</th>
-                    <th>Status</th>
-                </tr>
+                <span class="history-count">3 Recent Records</span>
 
-                <tr>
-                    <td>10 June 2026</td>
-                    <td>Oil Change</td>
-                    <td>₹2,500</td>
-                    <td class="completed">Completed</td>
-                </tr>
+            </div>
 
-                <tr>
-                    <td>12 March 2026</td>
-                    <td>General Service</td>
-                    <td>₹4,200</td>
-                    <td class="completed">Completed</td>
-                </tr>
 
-                <tr>
-                    <td>20 December 2025</td>
-                    <td>Brake Inspection</td>
-                    <td>₹1,500</td>
-                    <td class="completed">Completed</td>
-                </tr>
+            <div class="table-container">
 
-            </table>
+                <table>
 
-        </div>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Service</th>
+                            <th>Cost</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>10 June 2026</td>
+                            <td>Oil Change</td>
+                            <td>₹2,500</td>
+                            <td>
+                                <span class="completed">Completed</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>12 March 2026</td>
+                            <td>General Service</td>
+                            <td>₹4,200</td>
+                            <td>
+                                <span class="completed">Completed</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>20 December 2025</td>
+                            <td>Brake Inspection</td>
+                            <td>₹1,500</td>
+                            <td>
+                                <span class="completed">Completed</span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
 
 
         <!-- Maintenance Reminder -->
-        <div class="box">
+        <section class="box">
 
-            <h2>Maintenance Reminders</h2>
+            <div class="section-heading">
 
-            <div class="reminder">
-                <p><b>Engine Oil</b></p>
-                <span>Due in 500 km</span>
+                <div>
+                    <span class="section-tag">UPCOMING</span>
+                    <h2>Maintenance Reminders</h2>
+                </div>
+
             </div>
 
-            <div class="reminder">
-                <p><b>Tyre Check</b></p>
-                <span>Due in 1,000 km</span>
+
+            <div class="reminder-list">
+
+                <div class="reminder">
+
+                    <div class="reminder-left">
+                        <div class="reminder-icon">🛢️</div>
+
+                        <div>
+                            <p>Engine Oil</p>
+                            <span>Regular oil replacement</span>
+                        </div>
+                    </div>
+
+                    <strong>Due in 500 km</strong>
+
+                </div>
+
+
+                <div class="reminder">
+
+                    <div class="reminder-left">
+                        <div class="reminder-icon">🛞</div>
+
+                        <div>
+                            <p>Tyre Check</p>
+                            <span>Check tyre pressure and condition</span>
+                        </div>
+                    </div>
+
+                    <strong>Due in 1,000 km</strong>
+
+                </div>
+
+
+                <div class="reminder">
+
+                    <div class="reminder-left">
+                        <div class="reminder-icon">🔧</div>
+
+                        <div>
+                            <p>Brake Inspection</p>
+                            <span>Inspect brake pads and discs</span>
+                        </div>
+                    </div>
+
+                    <strong>Due in 2,000 km</strong>
+
+                </div>
+
             </div>
 
-            <div class="reminder">
-                <p><b>Brake Inspection</b></p>
-                <span>Due in 2,000 km</span>
-            </div>
+        </section>
 
-        </div>
-
-    </div>
+    </main>
 
 
     <!-- Footer -->
-    <div class="footer">
-        <p>© 2026 MotorMile | Vehicle Service & Maintenance Management System</p>
-    </div>
+    <footer class="footer">
+
+        <div class="footer-logo">
+            🚗 MotorMile
+        </div>
+
+        <p>
+            Vehicle Service & Maintenance Management System
+        </p>
+
+        <small>
+            © 2026 MotorMile. All rights reserved.
+        </small>
+
+    </footer>
 
 </body>
 </html>
