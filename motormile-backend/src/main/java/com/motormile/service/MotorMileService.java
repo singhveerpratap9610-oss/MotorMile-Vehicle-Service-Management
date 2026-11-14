@@ -7,12 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.motormile.model.ServiceBooking;
 import com.motormile.model.Vehicle;
-import com.motormile.repository.MotorMileRepository;
+import com.motormile.repository.ServiceBookingRepository;
+import com.motormile.repository.VehicleRepository;
 
 @Service
 public class MotorMileService {
 
-    private final MotorMileRepository repository;
+    private final VehicleRepository vehicleRepository;
+    private final ServiceBookingRepository bookingRepository;
 
     private static final Map<String, Double> SERVICE_PRICES = Map.of(
             "General Service", 4200.0,
@@ -22,19 +24,19 @@ public class MotorMileService {
             "Tyre Replacement", 6000.0
     );
 
-    public MotorMileService(MotorMileRepository repository) {
-        this.repository = repository;
+    public MotorMileService(VehicleRepository vehicleRepository, ServiceBookingRepository bookingRepository) {
+        this.vehicleRepository = vehicleRepository;
+        this.bookingRepository = bookingRepository;
     }
 
     public Vehicle getVehicleDetails() {
-        return repository.getVehicle();
+        return vehicleRepository.findById(1L).orElse(null);
     }
 
     public List<ServiceBooking> getAllServiceBookings() {
-        return repository.findAllBookings();
+        return bookingRepository.findAll();
     }
 
-    // Business Rule 1: Dynamic Service Pricing Calculation
     public double calculateServiceCost(String serviceType) {
         if (serviceType == null || !SERVICE_PRICES.containsKey(serviceType)) {
             throw new IllegalArgumentException("Invalid service type: " + serviceType);
@@ -42,14 +44,13 @@ public class MotorMileService {
         return SERVICE_PRICES.get(serviceType);
     }
 
-    // Business Rule 2: Booking Validation & Duplicate Prevention
     public ServiceBooking bookService(ServiceBooking request) {
         if (request.getDate() == null || request.getDate().isBlank() ||
             request.getTime() == null || request.getTime().isBlank()) {
             throw new IllegalArgumentException("Preferred date and time are required.");
         }
 
-        boolean duplicateExists = repository.findAllBookings().stream()
+        boolean duplicateExists = bookingRepository.findAll().stream()
                 .anyMatch(existing ->
                         existing.getDate().equalsIgnoreCase(request.getDate()) &&
                         existing.getService().equalsIgnoreCase(request.getService()));
@@ -62,6 +63,6 @@ public class MotorMileService {
         request.setCost(cost);
         request.setStatus("Booked");
 
-        return repository.saveBooking(request);
+        return bookingRepository.save(request);
     }
 }
